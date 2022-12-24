@@ -1,0 +1,34 @@
+{
+  "name": "vidly",
+  "version": "1.0.0",
+  "description": "A video library backend.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --watchAll --verbose --runInBand ",
+    "start": "node index.js"
+
+  },
+  "engines": {
+    "node": "18.12.1"
+  },
+  "keywords": [],
+  "author": "Carlos Hernandez",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "compression": "^1.7.4",
+    "config": "^3.3.8",
+    "express": "^4.18.2",
+    "helmet": "^6.0.1",
+    "joi": "^17.7.0",
+    "joi-objectid": "^4.0.2",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.21",
+    "mongoose": "^6.7.4",
+    "winston": "^3.8.2"
+  },
+  "devDependencies": {
+    "jest": "^29.3.1",
+    "supertest": "^6.3.3"
+  }
+}

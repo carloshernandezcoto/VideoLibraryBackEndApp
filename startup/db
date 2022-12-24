@@ -1,0 +1,11 @@
+const mongoose = require("mongoose");
+
+module.exports = function (connectionString) {
+  mongoose
+    .connect(connectionString, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    })
+    .then(() => console.log(`Connected to ${connectionString}...`));
+  //.catch((err) => console.error("Could not connect to DB...", err)); //No need as these are being caught and logged by the process object at startup.
+};
