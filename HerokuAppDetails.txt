@@ -1,0 +1,6 @@
+https://video-rental-backend-app.herokuapp.com/
+
+https://git.heroku.com/video-rental-backend-app.git
+
+
+Mlab (mongo connection details):
