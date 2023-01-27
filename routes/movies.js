@@ -1,6 +1,7 @@
 const validateObjectId = require("../middleware/validateObjectId");
 const asyncMiddleware = require("../middleware/async");
 const auth = require("../middleware/auth");
+const admin = require("../middleware/admin");
 const { Movie, validate } = require("./../models/movie");
 const { Genre } = require("../models/genre");
 const express = require("express");
@@ -65,6 +66,7 @@ router.put(
         genre: { _id: genre._id, name: genre.name },
         numberInStock: req.body.numberInStock,
         dailyRentalRate: req.body.dailyRentalRate,
+        liked: req.body.liked ? req.body.liked : false,
       },
       { new: true }
     );
@@ -76,7 +78,7 @@ router.put(
 
 router.delete(
   "/:id",
-  auth,
+  [auth, admin],
   asyncMiddleware(async (req, res) => {
     const movie = await Movie.findByIdAndRemove(req.params.id);
     if (!movie) return res.status(404).send("Movie not found.");

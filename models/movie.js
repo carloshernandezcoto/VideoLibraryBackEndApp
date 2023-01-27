@@ -13,6 +13,7 @@ const movieSchema = new mongoose.Schema({
   genre: { type: genreSchema, required: true },
   numberInStock: { type: Number, required: true, min: 0, max: 255 },
   dailyRentalRate: { type: Number, required: true, min: 0, max: 255 },
+  liked: { type: Boolean, default: false },
 });
 
 const Movie = mongoose.model("Movie", movieSchema);

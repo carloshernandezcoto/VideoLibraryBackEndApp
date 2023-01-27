@@ -1,10 +1,12 @@
 const { handleGlobalErrors } = require("./startup/logger");
 const Joi = require("joi");
+//const cors = require("cors");
 const express = require("express");
 const app = express();
 const config = require("config");
 
 handleGlobalErrors();
+//app.use(cors());
 require("./startup/config")();
 require("./startup/routes")(app);
 require("./startup/validation");
@@ -13,7 +15,7 @@ require("./startup/validation")();
 require("./startup/db")(config.get("db"));
 require("./startup/prod")(app);
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3900;
 const server = app.listen(port, () => {
   console.log(`Listening on port ${port}...`);
 });
