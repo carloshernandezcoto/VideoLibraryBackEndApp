@@ -8,7 +8,7 @@ const config = require("config");
 handleGlobalErrors();
 app.use(
   cors({
-    origin: "https://video-rental-frontend-app.herokuapp.com/",
+    origin: "https://video-rental-frontend-app.herokuapp.com/movies/",
     credentials: true,
   })
 );
