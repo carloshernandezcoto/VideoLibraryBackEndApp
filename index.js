@@ -6,9 +6,13 @@ const app = express();
 const config = require("config");
 
 handleGlobalErrors();
+app.use(cors({}));
 app.use(
   cors({
-    origin: "https://video-rental-frontend-app.herokuapp.com",
+    origin: [
+      "https://video-rental-frontend-app.herokuapp.com",
+      "http://localhost:3000/movies",
+    ],
     credentials: true,
   })
 );
